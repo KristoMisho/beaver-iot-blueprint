@@ -161,6 +161,12 @@ definition:
       - key: d_to_d
         type: long
         entity_mapping: d_to_d
+      - key: people_total_in
+        type: long
+        entity_mapping: people_total_in
+      - key: people_total_out
+        type: long
+        entity_mapping: people_total_out
 initial_entities:
   - name: IPSO Version
     type: property
@@ -435,6 +441,16 @@ initial_entities:
     access_mod: R
     value_type: long
     identifier: d_to_d
+  - name: People Total In
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: people_total_in
+  - name: People Total Out
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: people_total_out
 codec:
   id: default
   ref: vs121/codec/device-codec.yaml

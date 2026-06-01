@@ -105,6 +105,7 @@ function milesightDeviceDecode(bytes) {
             }
             i += 2;
         }
+
         // CURRENT ALARM
         else if (includes(current_alarm_chns, channel_id) && channel_type === 0x99) {
             var current_alarm_chn_name = "current_chn" + (current_alarm_chns.indexOf(channel_id) + 1);
@@ -330,7 +331,7 @@ function getValue(map, key) {
     return value;
 }
 
-if (!Object.assign) {
+//if (!Object.assign) {
     Object.defineProperty(Object, "assign", {
         enumerable: false,
         configurable: true,
@@ -366,4 +367,4 @@ if (!Object.assign) {
             return to;
         },
     });
-}
+//}

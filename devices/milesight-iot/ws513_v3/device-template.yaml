@@ -1,0 +1,1120 @@
+metadata:
+  lora_device_profile_class: ClassC-OTAA
+definition:
+  input:
+    type: object
+    properties:
+      - key: device_id
+        type: string
+        required: true
+        is_device_id: true
+      - key: alarm_settings.alarm_count
+        type: double
+        entity_mapping: alarm_settings.alarm_count
+      - key: alarm_settings.alarm_interval
+        type: double
+        entity_mapping: alarm_settings.alarm_interval
+      - key: alarm_settings.release_enable
+        type: long
+        entity_mapping: alarm_settings.release_enable
+      - key: bluetooth_name
+        type: string
+        entity_mapping: bluetooth_name
+      - key: button_lock_settings.reset_config
+        type: boolean
+        entity_mapping: button_lock_settings.reset_config
+      - key: button_lock_settings.switch_config
+        type: boolean
+        entity_mapping: button_lock_settings.switch_config
+      - key: celsius_temperature
+        type: double
+        entity_mapping: celsius_temperature
+      - key: current_collection_error_report.type
+        type: long
+        entity_mapping: current_collection_error_report.type
+      - key: current_rating
+        type: double
+        entity_mapping: current_rating
+      - key: d2d_settings.d2d_agent_enable
+        type: long
+        entity_mapping: d2d_settings.d2d_agent_enable
+      - key: daylight_saving_time.dst_bias
+        type: long
+        entity_mapping: daylight_saving_time.dst_bias
+      - key: daylight_saving_time.enable
+        type: boolean
+        entity_mapping: daylight_saving_time.enable
+      - key: daylight_saving_time.end_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.end_hour_min
+      - key: daylight_saving_time.end_month
+        type: long
+        entity_mapping: daylight_saving_time.end_month
+      - key: daylight_saving_time.end_week_day
+        type: long
+        entity_mapping: daylight_saving_time.end_week_day
+      - key: daylight_saving_time.end_week_num
+        type: long
+        entity_mapping: daylight_saving_time.end_week_num
+      - key: daylight_saving_time.start_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.start_hour_min
+      - key: daylight_saving_time.start_month
+        type: long
+        entity_mapping: daylight_saving_time.start_month
+      - key: daylight_saving_time.start_week_day
+        type: long
+        entity_mapping: daylight_saving_time.start_week_day
+      - key: daylight_saving_time.start_week_num
+        type: long
+        entity_mapping: daylight_saving_time.start_week_num
+      - key: device_abnormal_alarm.status
+        type: long
+        entity_mapping: device_abnormal_alarm.status
+      - key: device_status
+        type: boolean
+        entity_mapping: device_status
+      - key: electric_power
+        type: long
+        entity_mapping: electric_power
+      - key: electric_power_collection_error_report.type
+        type: long
+        entity_mapping: electric_power_collection_error_report.type
+      - key: fahrenheit_temperature
+        type: double
+        entity_mapping: fahrenheit_temperature
+      - key: firmware_version
+        type: string
+        entity_mapping: firmware_version
+      - key: hardware_version
+        type: string
+        entity_mapping: hardware_version
+      - key: high_current_protection.enable
+        type: boolean
+        entity_mapping: high_current_protection.enable
+      - key: ipso_version
+        type: long
+        entity_mapping: ipso_version
+      - key: led_indicator_mode
+        type: boolean
+        entity_mapping: led_indicator_mode
+      - key: lorawan_class
+        type: long
+        entity_mapping: lorawan_class
+      - key: overcurrent_alarm_settings.enable
+        type: boolean
+        entity_mapping: overcurrent_alarm_settings.enable
+      - key: overcurrent_alarm_settings.threshold
+        type: long
+        entity_mapping: overcurrent_alarm_settings.threshold
+      - key: overcurrent_alarm.current
+        type: double
+        entity_mapping: overcurrent_alarm.current
+      - key: overcurrent_alarm.status
+        type: long
+        entity_mapping: overcurrent_alarm.status
+      - key: overcurrent_protection.enable
+        type: boolean
+        entity_mapping: overcurrent_protection.enable
+      - key: overcurrent_protection.threshold
+        type: long
+        entity_mapping: overcurrent_protection.threshold
+      - key: power_consumption
+        type: double
+        entity_mapping: power_consumption
+      - key: power_consumption_collection_error_report.type
+        type: long
+        entity_mapping: power_consumption_collection_error_report.type
+      - key: power_consumption_enable
+        type: boolean
+        entity_mapping: power_consumption_enable
+      - key: power_factor
+        type: long
+        entity_mapping: power_factor
+      - key: power_factor_collection_error_report.type
+        type: long
+        entity_mapping: power_factor_collection_error_report.type
+      - key: power_switch_mode
+        type: long
+        entity_mapping: power_switch_mode
+      - key: reporting_interval_settings.time
+        type: long
+        entity_mapping: reporting_interval_settings.time
+      - key: sn
+        type: string
+        entity_mapping: sn
+      - key: socket_status.switch_status_1
+        type: long
+        entity_mapping: socket_status.switch_status_1
+      - key: temperature
+        type: double
+        entity_mapping: temperature
+      - key: temperature_alarm_rule.celsius_threshold_max
+        type: double
+        entity_mapping: temperature_alarm_rule.celsius_threshold_max
+      - key: temperature_alarm_rule.celsius_threshold_min
+        type: double
+        entity_mapping: temperature_alarm_rule.celsius_threshold_min
+      - key: temperature_alarm_rule.condition
+        type: long
+        entity_mapping: temperature_alarm_rule.condition
+      - key: temperature_alarm_rule.fahrenheit_threshold_max
+        type: double
+        entity_mapping: temperature_alarm_rule.fahrenheit_threshold_max
+      - key: temperature_alarm_rule.fahrenheit_threshold_min
+        type: double
+        entity_mapping: temperature_alarm_rule.fahrenheit_threshold_min
+      - key: temperature_alarm_rule.threshold_enable
+        type: long
+        entity_mapping: temperature_alarm_rule.threshold_enable
+      - key: temperature_alarm_rule.threshold_max
+        type: double
+        entity_mapping: temperature_alarm_rule.threshold_max
+      - key: temperature_alarm_rule.threshold_min
+        type: double
+        entity_mapping: temperature_alarm_rule.threshold_min
+      - key: temperature_alarm.alarm_type
+        type: long
+        entity_mapping: temperature_alarm.alarm_type
+      - key: temperature_alarm.celsius_temperature
+        type: double
+        entity_mapping: temperature_alarm.celsius_temperature
+      - key: temperature_alarm.fahrenheit_temperature
+        type: double
+        entity_mapping: temperature_alarm.fahrenheit_temperature
+      - key: temperature_alarm.temperature
+        type: double
+        entity_mapping: temperature_alarm.temperature
+      - key: temperature_calibration_settings.celsius_value
+        type: double
+        entity_mapping: temperature_calibration_settings.celsius_value
+      - key: temperature_calibration_settings.enable
+        type: boolean
+        entity_mapping: temperature_calibration_settings.enable
+      - key: temperature_calibration_settings.fahrenheit_value
+        type: double
+        entity_mapping: temperature_calibration_settings.fahrenheit_value
+      - key: temperature_calibration_settings.value
+        type: double
+        entity_mapping: temperature_calibration_settings.value
+      - key: time_zone
+        type: long
+        entity_mapping: time_zone
+      - key: tsl_version
+        type: string
+        entity_mapping: tsl_version
+      - key: voltage
+        type: long
+        entity_mapping: voltage
+      - key: voltage_collection_error_report.type
+        type: long
+        entity_mapping: voltage_collection_error_report.type
+      - key: reset_event
+        type: boolean
+        entity_mapping: reset_event
+  output:
+    type: object
+    properties:
+      - key: alarm_settings.alarm_count
+        type: double
+        entity_mapping: alarm_settings.alarm_count
+      - key: alarm_settings.alarm_interval
+        type: double
+        entity_mapping: alarm_settings.alarm_interval
+      - key: alarm_settings.release_enable
+        type: long
+        entity_mapping: alarm_settings.release_enable
+      - key: bluetooth_name
+        type: string
+        entity_mapping: bluetooth_name
+      - key: button_lock_settings.reset_config
+        type: boolean
+        entity_mapping: button_lock_settings.reset_config
+      - key: button_lock_settings.switch_config
+        type: boolean
+        entity_mapping: button_lock_settings.switch_config
+      - key: clear_power_consumption
+        type: boolean
+        entity_mapping: clear_power_consumption
+      - key: d2d_settings.d2d_agent_enable
+        type: long
+        entity_mapping: d2d_settings.d2d_agent_enable
+      - key: daylight_saving_time.dst_bias
+        type: long
+        entity_mapping: daylight_saving_time.dst_bias
+      - key: daylight_saving_time.enable
+        type: boolean
+        entity_mapping: daylight_saving_time.enable
+      - key: daylight_saving_time.end_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.end_hour_min
+      - key: daylight_saving_time.end_month
+        type: long
+        entity_mapping: daylight_saving_time.end_month
+      - key: daylight_saving_time.end_week_day
+        type: long
+        entity_mapping: daylight_saving_time.end_week_day
+      - key: daylight_saving_time.end_week_num
+        type: long
+        entity_mapping: daylight_saving_time.end_week_num
+      - key: daylight_saving_time.start_hour_min
+        type: long
+        entity_mapping: daylight_saving_time.start_hour_min
+      - key: daylight_saving_time.start_month
+        type: long
+        entity_mapping: daylight_saving_time.start_month
+      - key: daylight_saving_time.start_week_day
+        type: long
+        entity_mapping: daylight_saving_time.start_week_day
+      - key: daylight_saving_time.start_week_num
+        type: long
+        entity_mapping: daylight_saving_time.start_week_num
+      - key: get_schedule.schedule_id
+        type: long
+        entity_mapping: get_schedule.schedule_id
+      - key: high_current_protection.enable
+        type: boolean
+        entity_mapping: high_current_protection.enable
+      - key: invert_socket_status
+        type: boolean
+        entity_mapping: invert_socket_status
+      - key: led_indicator_mode
+        type: boolean
+        entity_mapping: led_indicator_mode
+      - key: overcurrent_alarm_settings.enable
+        type: boolean
+        entity_mapping: overcurrent_alarm_settings.enable
+      - key: overcurrent_alarm_settings.threshold
+        type: long
+        entity_mapping: overcurrent_alarm_settings.threshold
+      - key: overcurrent_protection.enable
+        type: boolean
+        entity_mapping: overcurrent_protection.enable
+      - key: overcurrent_protection.threshold
+        type: long
+        entity_mapping: overcurrent_protection.threshold
+      - key: power_consumption_enable
+        type: boolean
+        entity_mapping: power_consumption_enable
+      - key: power_switch_mode
+        type: long
+        entity_mapping: power_switch_mode
+      - key: query_device_status
+        type: boolean
+        entity_mapping: query_device_status
+      - key: reboot
+        type: boolean
+        entity_mapping: reboot
+      - key: reporting_interval_settings.time
+        type: long
+        entity_mapping: reporting_interval_settings.time
+      - key: set_socket.status_1
+        type: long
+        entity_mapping: set_socket.status_1
+      - key: temperature_alarm_rule.celsius_threshold_max
+        type: double
+        entity_mapping: temperature_alarm_rule.celsius_threshold_max
+      - key: temperature_alarm_rule.celsius_threshold_min
+        type: double
+        entity_mapping: temperature_alarm_rule.celsius_threshold_min
+      - key: temperature_alarm_rule.condition
+        type: long
+        entity_mapping: temperature_alarm_rule.condition
+      - key: temperature_alarm_rule.fahrenheit_threshold_max
+        type: double
+        entity_mapping: temperature_alarm_rule.fahrenheit_threshold_max
+      - key: temperature_alarm_rule.fahrenheit_threshold_min
+        type: double
+        entity_mapping: temperature_alarm_rule.fahrenheit_threshold_min
+      - key: temperature_alarm_rule.threshold_enable
+        type: long
+        entity_mapping: temperature_alarm_rule.threshold_enable
+      - key: temperature_alarm_rule.threshold_max
+        type: double
+        entity_mapping: temperature_alarm_rule.threshold_max
+      - key: temperature_alarm_rule.threshold_min
+        type: double
+        entity_mapping: temperature_alarm_rule.threshold_min
+      - key: temperature_calibration_settings.celsius_value
+        type: double
+        entity_mapping: temperature_calibration_settings.celsius_value
+      - key: temperature_calibration_settings.enable
+        type: boolean
+        entity_mapping: temperature_calibration_settings.enable
+      - key: temperature_calibration_settings.fahrenheit_value
+        type: double
+        entity_mapping: temperature_calibration_settings.fahrenheit_value
+      - key: temperature_calibration_settings.value
+        type: double
+        entity_mapping: temperature_calibration_settings.value
+      - key: time_zone
+        type: long
+        entity_mapping: time_zone
+      - key: lora_tx_rdt_max
+        type: long
+        entity_mapping: lora_tx_rdt_max
+initial_entities:
+  - identifier: alarm_settings
+    name: Alarm Reporting Times(Threshold Settings)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Alarm Reporting Times(Threshold Settings)
+        value_type: double
+        identifier: alarm_count
+      - name: Alarm Reporting Interval(Threshold Settings)
+        value_type: double
+        attributes:
+          unit: min
+        identifier: alarm_interval
+      - name: Alarm Dismiss Report Enable(Threshold Settings)
+        value_type: long
+        attributes:
+          enum:
+            '0': Disable;
+            '1': Enable;
+        identifier: release_enable
+  - name: Bluetooth Connection Name
+    type: property
+    access_mod: RW
+    value_type: string
+    attributes:
+      max_length: 32
+    identifier: bluetooth_name
+  - identifier: button_lock_settings
+    name: Reset Lock(Button Lock )
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Reset Lock(Button Lock )
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: reset_config
+      - name: On/Off Lock (Button Lock )
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: switch_config
+  - name: Celsius Temperature
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: °C
+    identifier: celsius_temperature
+  - name: Clear Power Consumption
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: clear_power_consumption
+  - identifier: current_collection_error_report
+    name: Type(Current Collect Error)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type(Current Collect Error)
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - name: Current Rating
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: a
+    identifier: current_rating
+  - identifier: d2d_settings
+    name: D2D Agent Enable(D2D Settings)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: D2D Agent Enable(D2D Settings)
+        value_type: long
+        attributes:
+          enum:
+            '0': disable
+            '1': enable
+        identifier: d2d_agent_enable
+  - identifier: daylight_saving_time
+    name: DST Bias(Daylight Saving Time)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: DST Bias(Daylight Saving Time)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: dst_bias
+      - name: Enable(Daylight Saving Time)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': Disable
+            'true': Enable
+        identifier: enable
+      - name: Time(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '0': '00:00'
+            '60': '01:00'
+            '120': '02:00'
+            '180': '03:00'
+            '240': '04:00'
+            '300': '05:00'
+            '360': '06:00'
+            '420': '07:00'
+            '480': '08:00'
+            '540': '09:00'
+            '600': '10:00'
+            '660': '11:00'
+            '720': '12:00'
+            '780': '13:00'
+            '840': '14:00'
+            '900': '15:00'
+            '960': '16:00'
+            '1020': '17:00'
+            '1080': '18:00'
+            '1140': '19:00'
+            '1200': '20:00'
+            '1260': '21:00'
+            '1320': '22:00'
+            '1380': '23:00'
+          unit: min
+        identifier: end_hour_min
+      - name: Month(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '1': Jan.
+            '2': Feb.
+            '3': Mar.
+            '4': Apr.
+            '5': May
+            '6': Jun.
+            '7': Jul.
+            '8': Aug.
+            '9': Sep.
+            '10': Oct.
+            '11': Nov.
+            '12': Dec.
+        identifier: end_month
+      - name: Week(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '1': Mon.
+            '2': Tues.
+            '3': Wed.
+            '4': Thurs.
+            '5': Fri.
+            '6': Sat.
+            '7': Sun.
+        identifier: end_week_day
+      - name: Number of Week(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '1': 1st
+            '2': 2nd
+            '3': 3rd
+            '4': 4th
+            '5': last
+        identifier: end_week_num
+      - name: Time(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '0': '00:00'
+            '60': '01:00'
+            '120': '02:00'
+            '180': '03:00'
+            '240': '04:00'
+            '300': '05:00'
+            '360': '06:00'
+            '420': '07:00'
+            '480': '08:00'
+            '540': '09:00'
+            '600': '10:00'
+            '660': '11:00'
+            '720': '12:00'
+            '780': '13:00'
+            '840': '14:00'
+            '900': '15:00'
+            '960': '16:00'
+            '1020': '17:00'
+            '1080': '18:00'
+            '1140': '19:00'
+            '1200': '20:00'
+            '1260': '21:00'
+            '1320': '22:00'
+            '1380': '23:00'
+          unit: min
+        identifier: start_hour_min
+      - name: Month(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '1': Jan.
+            '2': Feb.
+            '3': Mar.
+            '4': Apr.
+            '5': May
+            '6': Jun.
+            '7': Jul.
+            '8': Aug.
+            '9': Sep.
+            '10': Oct.
+            '11': Nov.
+            '12': Dec.
+        identifier: start_month
+      - name: Week(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '1': Mon.
+            '2': Tues.
+            '3': Wed.
+            '4': Thurs.
+            '5': Fri.
+            '6': Sat.
+            '7': Sun.
+        identifier: start_week_day
+      - name: Number of Week(Daylight Saving Time)
+        value_type: long
+        attributes:
+          enum:
+            '1': 1st
+            '2': 2nd
+            '3': 3rd
+            '4': 4th
+            '5': last
+        identifier: start_week_num
+  - identifier: device_abnormal_alarm
+    name: Status(Device Abnormal Alarm)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Status(Device Abnormal Alarm)
+        value_type: long
+        attributes:
+          enum:
+            '1': Abnormal
+        identifier: status
+  - name: Device Status
+    type: property
+    access_mod: R
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'off'
+        'true': 'on'
+    identifier: device_status
+  - name: Electric Power
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: W
+    identifier: electric_power
+  - identifier: electric_power_collection_error_report
+    name: Type(Electric Power Collect Error)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type(Electric Power Collect Error)
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - name: Fahrenheit Temperature
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: ℉
+    identifier: fahrenheit_temperature
+  - name: Firmware Version
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 4
+    identifier: firmware_version
+  - identifier: get_schedule
+    name: Schedule ID(Get Schedule)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Schedule ID(Get Schedule)
+        value_type: long
+        attributes:
+          enum:
+            '1': '1'
+            '2': '2'
+            '3': '3'
+            '4': '4'
+            '5': '5'
+            '6': '6'
+            '7': '7'
+            '8': '8'
+            '9': '9'
+            '10': '10'
+            '11': '11'
+            '12': '12'
+            '13': '13'
+            '14': '14'
+            '15': '15'
+            '16': '16'
+            '255': All schedules
+        identifier: schedule_id
+  - name: Hardware Version
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 4
+    identifier: hardware_version
+  - identifier: high_current_protection
+    name: Highcurrent Protection Enable(Highcurrent Protection)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Highcurrent Protection Enable(Highcurrent Protection)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+  - name: Socket Status Inverse
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: invert_socket_status
+  - name: IPSO
+    type: property
+    access_mod: R
+    value_type: long
+    identifier: ipso_version
+  - name: LED Indicator
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': disable
+        'true': enable
+    identifier: led_indicator_mode
+  - name: LoRaWAN Work Mode
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      enum:
+        '2': class_c
+    identifier: lorawan_class
+  - identifier: overcurrent_alarm_settings
+    name: Overcurrent Alarm Enable(Overcurrent Alarm)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Overcurrent Alarm Enable(Overcurrent Alarm)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Overcurrent Alarm Value(Overcurrent Alarm)
+        value_type: long
+        attributes:
+          unit: a
+        identifier: threshold
+  - identifier: overcurrent_alarm
+    name: Current(Over Current Alarm)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Current(Over Current Alarm)
+        value_type: double
+        attributes:
+          unit: a
+        identifier: current
+      - name: Status(Over Current Alarm)
+        value_type: long
+        attributes:
+          enum:
+            '0': Overcurrent alarm release
+            '1': Overcurrent alarm
+        identifier: status
+  - identifier: overcurrent_protection
+    name: Overcurrent Protection Enable(Overcurrent Protection)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Overcurrent Protection Enable(Overcurrent Protection)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Overcurrent Protection Value(Overcurrent Protection)
+        value_type: long
+        attributes:
+          unit: a
+        identifier: threshold
+  - name: Power Consumption
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: kWh
+    identifier: power_consumption
+  - identifier: power_consumption_collection_error_report
+    name: Type(Power Consumption Collect Error)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type(Power Consumption Collect Error)
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - name: Power Consumption Enable
+    type: property
+    access_mod: RW
+    value_type: boolean
+    attributes:
+      enum:
+        'false': disable
+        'true': enable
+    identifier: power_consumption_enable
+  - name: Power Factor
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: '%'
+    identifier: power_factor
+  - identifier: power_factor_collection_error_report
+    name: Type(Power Factor Collect Error)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type(Power Factor Collect Error)
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - name: When Power is Restored
+    type: property
+    access_mod: RW
+    value_type: long
+    attributes:
+      enum:
+        '0': Turn to Off
+        '1': Turn to On
+        '2': Return to Previous Working State
+    identifier: power_switch_mode
+  - name: Query Device Status
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: query_device_status
+  - name: Reboot
+    type: service
+    access_mod: W
+    value_type: boolean
+    attributes:
+      enum:
+        'false': 'no'
+        'true': 'yes'
+    identifier: reboot
+  - identifier: reporting_interval_settings
+    name: Reporting Interval(Reporting Interval)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Reporting Interval(Reporting Interval)
+        value_type: long
+        attributes:
+          unit: min
+        identifier: time
+  - name: SN
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 16
+    identifier: sn
+  - identifier: set_socket
+    name: Socket Switch Status(Socket Status)
+    type: service
+    access_mod: W
+    value_type: object
+    children:
+      - name: Socket Switch Status(Socket Status)
+        value_type: long
+        attributes:
+          enum:
+            '0': 'off'
+            '1': 'on'
+        identifier: status_1
+  - identifier: socket_status
+    name: Socket Switch Status(Socket Status )
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Socket Switch Status(Socket Status )
+        value_type: long
+        attributes:
+          enum:
+            '0': 'off'
+            '1': 'on'
+        identifier: switch_status_1
+  - name: Temperature
+    type: property
+    access_mod: R
+    value_type: double
+    attributes:
+      unit: °C
+    identifier: temperature
+  - identifier: temperature_alarm_rule
+    name: Celsius Value B(Temperature Threshold Settings)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Celsius Value B(Temperature Threshold Settings)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: celsius_threshold_max
+      - name: Celsius Value A(Temperature Threshold Settings)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: celsius_threshold_min
+      - name: Threshold Condition(Temperature Threshold Settings)
+        value_type: long
+        attributes:
+          enum:
+            '0': disable
+            '1': 'condition: x<A'
+            '2': 'condition: x>B'
+            '3': 'condition: A<x<B'
+            '4': 'condition: x<A or x>B'
+        identifier: condition
+      - name: Fahrenheit Value B(Temperature Threshold Settings)
+        value_type: double
+        attributes:
+          unit: ℉
+        identifier: fahrenheit_threshold_max
+      - name: Fahrenheit Value A(Temperature Threshold Settings)
+        value_type: double
+        attributes:
+          unit: ℉
+        identifier: fahrenheit_threshold_min
+      - name: Threshold Enable(Temperature Threshold Settings)
+        value_type: long
+        attributes:
+          enum:
+            '0': Disable;
+            '1': Enable;
+        identifier: threshold_enable
+      - name: Value B(Temperature Threshold Settings)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: threshold_max
+      - name: Value A(Temperature Threshold Settings)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: threshold_min
+  - identifier: temperature_alarm
+    name: Alarm Type(Temperature Threshold Alarm)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Alarm Type(Temperature Threshold Alarm)
+        value_type: long
+        attributes:
+          enum:
+            '0': temperature alarm release
+            '1': temperature alarm
+            '2': overheat alarm
+        identifier: alarm_type
+      - name: Celsius Temperature(Temperature Threshold Alarm)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: celsius_temperature
+      - name: Fahrenheit Temperature(Temperature Threshold Alarm)
+        value_type: double
+        attributes:
+          unit: ℉
+        identifier: fahrenheit_temperature
+      - name: Temperature(Temperature Threshold Alarm)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: temperature
+  - identifier: temperature_calibration_settings
+    name: Celsius Calibration Value(Temperature Calibration Settings)
+    type: property
+    access_mod: RW
+    value_type: object
+    children:
+      - name: Celsius Calibration Value(Temperature Calibration Settings)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: celsius_value
+      - name: Calibration Enable(Temperature Calibration Settings)
+        value_type: boolean
+        attributes:
+          enum:
+            'false': disable
+            'true': enable
+        identifier: enable
+      - name: Fahrenheit Calibration Value(Temperature Calibration Settings)
+        value_type: double
+        attributes:
+          unit: ℉
+        identifier: fahrenheit_value
+      - name: Calibration Value(Temperature Calibration Settings)
+        value_type: double
+        attributes:
+          unit: °C
+        identifier: value
+  - name: Time Zone
+    type: property
+    access_mod: RW
+    value_type: long
+    attributes:
+      enum:
+        '0': UTC(WET)
+        '60': UTC+1(CET)
+        '120': UTC+2(EET)
+        '180': UTC+3(MSK)
+        '210': UTC+3:30(IRST)
+        '240': UTC+4(GST)
+        '270': UTC+4:30(AFT)
+        '300': UTC+5(PKT)
+        '330': UTC+5:30(IST)
+        '345': UTC+5:45(NPT)
+        '360': UTC+6(BHT)
+        '390': UTC+6:30(MMT)
+        '420': UTC+7(ICT)
+        '480': UTC+8(CT/CST)
+        '540': UTC+9(JST)
+        '570': UTC+9:30(ACST)
+        '600': UTC+10(AEST)
+        '630': UTC+10:30(LHST)
+        '660': UTC+11(VUT)
+        '720': UTC+12(NZST)
+        '765': UTC+12:45(CHAST)
+        '780': UTC+13(PHOT)
+        '840': UTC+14(LINT)
+        '-720': UTC-12(IDLW)
+        '-660': UTC-11(SST)
+        '-600': UTC-10(HST)
+        '-570': UTC-9:30(MIT)
+        '-540': UTC-9(AKST)
+        '-480': UTC-8(PST)
+        '-420': UTC-7(MST)
+        '-360': UTC-6(CST)
+        '-300': UTC-5(EST)
+        '-240': UTC-4(AST)
+        '-210': UTC-3:30(NST)
+        '-180': UTC-3(BRT)
+        '-120': UTC-2(FNT)
+        '-60': UTC-1(CVT)
+    identifier: time_zone
+  - name: TSL Version
+    type: property
+    access_mod: R
+    value_type: string
+    attributes:
+      max_length: 6
+    identifier: tsl_version
+  - name: Voltage
+    type: property
+    access_mod: R
+    value_type: long
+    attributes:
+      unit: V
+    identifier: voltage
+  - identifier: voltage_collection_error_report
+    name: Type(Voltage Collect Error)
+    type: property
+    access_mod: R
+    value_type: object
+    children:
+      - name: Type(Voltage Collect Error)
+        value_type: long
+        attributes:
+          enum:
+            '1': Collect_error
+        identifier: type
+  - name: Reset Event
+    type: property
+    access_mod: R
+    value_type: boolean
+    attributes:
+      enum:
+        'false': normal
+        'true': reset
+    identifier: reset_event
+  - name: LoRa TX RDT Max
+    type: service
+    access_mod: W
+    value_type: long
+    attributes:
+      unit: s
+    identifier: lora_tx_rdt_max
+codec:
+  id: default
+  ref: ws513_v3/codec/device-codec.yaml

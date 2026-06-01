@@ -335,11 +335,17 @@ models:
   - id: ws513
     name: WS513
     template: ws513/device-template.yaml
+  - id: ws513_v3
+    name: WS513 V3
+    template: ws513_v3/device-template.yaml
   - id: ws515
     name: WS515
     template: ws515/device-template.yaml
+  - id: ws515_v3
+    name: WS515 V3
+    template: ws515_v3/device-template.yaml
   - id: ws513_w11
-    name: WS513
+    name: WS513_w11
     template: ws513_w11/device-template.yaml
   - id: ws523
     name: WS523
@@ -362,6 +368,9 @@ models:
   - id: wt201_v2
     name: WT201 V2
     template: wt201_v2/device-template.yaml
+  - id: wt211
+    name: WT211
+    template: wt211/device-template.yaml
   - id: wt301
     name: WT301
     template: wt301/device-template.yaml
@@ -383,3 +392,6 @@ models:
   - id: wt401
     name: WT401
     template: wt401/device-template.yaml
+  - id: cth01
+    name: CTH01
+    template: cth01/device-template.yaml

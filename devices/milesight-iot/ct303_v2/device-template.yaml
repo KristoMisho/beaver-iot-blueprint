@@ -8,18 +8,6 @@ definition:
         type: string
         required: true
         is_device_id: true
-      - key: product_sn
-        type: string
-        entity_mapping: product_sn
-      - key: version.hardware_version
-        type: string
-        entity_mapping: version.hardware_version
-      - key: version.firmware_version
-        type: string
-        entity_mapping: version.firmware_version
-      - key: oem_id
-        type: string
-        entity_mapping: oem_id
       - key: ipso_version
         type: string
         entity_mapping: ipso_version
@@ -300,36 +288,6 @@ definition:
         type: double
         entity_mapping: power_factor
 initial_entities:
-  - name: Product SN
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 16
-    identifier: product_sn
-  - identifier: version
-    name: Hardware Version
-    type: property
-    access_mod: R
-    value_type: object
-    children:
-      - name: Hardware Version
-        value_type: string
-        attributes:
-          max_length: 6
-        identifier: hardware_version
-      - name: Firmware Version
-        value_type: string
-        attributes:
-          max_length: 16
-        identifier: firmware_version
-  - name: OEM ID
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 2
-    identifier: oem_id
   - name: IPSO Version
     type: property
     access_mod: R

@@ -2,7 +2,7 @@ codecs:
   - id: default
     decoder:
       chain:
-        - script: uc501/codec/decoder.js
+        - script: uc501/codec/uc501-cellular.js
           entry: Decode
           args:
             - id: fPort
@@ -20,7 +20,7 @@ codecs:
           args:
             - id: obj
               is_payload: true
-        - script: uc501/codec/encoder.js
+        - script: uc501/codec/uc501-cellular.js
           entry: Encode
           args:
             - id: fPort

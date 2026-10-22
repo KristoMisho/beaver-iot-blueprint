@@ -27,7 +27,25 @@ function decodePayload(bytes) {
     payload.data_length = buffer.readUInt16BE();
     payload.data = decodeSensorData(buffer.slice(payload.data_length));
 
-    return payload;
+    // Estrae i dati del primo sensore decodificato, se l'array non è vuoto
+    var sensorData = (payload.data && payload.data.length > 0) ? payload.data[0] : {};
+   
+    // Crea un oggetto piatto unendo i dati di sistema e le metriche del sensore
+    var flatResult = {
+        sn: payload.sn,
+        firmware_version: payload.firmwareVersion,
+        hardware_version: payload.hardwareVersion,
+        csq: payload.csq
+    };
+
+    // Copia tutte le chiavi (battery, gpio_input_1, ecc.) direttamente a livello principale
+    for (var key in sensorData) {
+        if (sensorData.hasOwnProperty(key)) {
+            flatResult[key] = sensorData[key];
+        }
+    }
+
+    return flatResult;
 }
 
 var gpio_chns = [0x03, 0x04];

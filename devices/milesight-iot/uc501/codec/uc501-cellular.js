@@ -4,8 +4,8 @@
  * Copyright 2024 Milesight IoT
  *
  * @product UC50x
- */
-
+ */   /*funzione di wrapping perche beaver iot si aspetta un oggetto json, mentre il file cellular.js si aspetta una stringa di byte ( incopatibilità)
+function Decode(fPort, bytes) { // 1. Se Beaver IoT passa un oggetto JSON {"data": "..."}, estraiamo la stringa hex if (typeof bytes === 'object' && bytes !== null) { if (bytes.data) { bytes = bytes.data; } } // 2. Se è una stringa esadecimale, la convertiamo nell'array di byte numerici che decodePayload si aspetta if (typeof bytes === 'string') { var str = bytes; bytes = []; for (var i = 0; i < str.length; i += 2) { bytes.push(parseInt(str.substr(i, 2), 16)); } } // 3. Chiamiamo la tua funzione originale di decodifica return decodePayload(bytes); }
 /* eslint no-redeclare: "off" */
 /* eslint-disable-next-line */
 function decodePayload(bytes) {

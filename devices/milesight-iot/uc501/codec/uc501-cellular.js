@@ -474,3 +474,62 @@ function includes(items, item) {
     }
     return false;
 }
+function versionString(s) {
+    var major = parseInt(String(s).substring(0, 2), 10);
+    var minor = parseInt(String(s).substring(2, 4), 10);
+    if (isNaN(major) || isNaN(minor)) return String(s);
+    return "V" + major + "." + minor;
+}
+
+// Beaver IoT entry point
+function Decode(fPort, bytes) {
+    var p = decodePayload(bytes);
+    var out = {};
+
+    out.device_id = p.sn;
+    out.sn = p.sn;
+    out.firmware_version = versionString(p.firmwareVersion);
+    out.hardware_version = versionString(p.hardwareVersion);
+
+    // più report nello stesso pacchetto: dal più vecchio al più recente
+    var records = p.data.slice(0);
+    records.sort(function (a, b) { return (a.timestamp || 0) - (b.timestamp || 0); });
+
+    var sdi = {};
+    for (var r = 0; r < records.length; r++) {
+        var rec = records[r];
+        for (var key in rec) {
+            var v = rec[key];
+            var m;
+
+            if (key === "battery") {
+                out.battery = v;
+            } else if ((m = /^gpio_(input|output)_(\d+)$/.exec(key))) {
+                out[key] = v === "high";
+            } else if (/^gpio_counter_\d+$/.test(key)) {
+                out[key] = v;
+            } else if ((m = /^(adc|adv)_(\d+)_alarm$/.exec(key))) {
+                if (v === "threshold alarm") out["analog_input_" + m[2] + "_alarm"] = 1;
+                else if (v === "mutation alarm") out["analog_input_" + m[2] + "_alarm"] = 2;
+            } else if ((m = /^(adc|adv)_(\d+)(_min|_max|_avg)?$/.exec(key))) {
+                out["analog_input_" + m[2] + (m[3] || "")] = v;
+                if (!m[3]) out["analog_input_" + m[2] + "_type"] = m[1] === "adc" ? 0 : 1;
+            } else if ((m = /^sdi_chn_(\d+)$/.exec(key))) {
+                sdi[m[1]] = String(v).replace(/^\s+|\s+$/g, "");
+            } else if (/^modbus_chn_\d+$/.test(key)) {
+                out[key] = v;
+            }
+        }
+    }
+
+    var sdiParts = [];
+    for (var ch in sdi) sdiParts.push(ch + ":" + sdi[ch]);
+    if (sdiParts.length > 0) out.sid12 = sdiParts.join(" | ");
+
+    return out;
+}
+
+// Il downlink non è supportato dal protocollo LTE via UDP: niente da codificare.
+function Encode(fPort, obj) {
+    return [];
+}

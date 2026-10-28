@@ -3,7 +3,7 @@ codecs:
     decoder:
       chain:
         - script: uc501/codec/uc501-cellular.js
-          entry: Decode
+          entry: decodePayload
           args:
             - id: bytes
               is_payload: true

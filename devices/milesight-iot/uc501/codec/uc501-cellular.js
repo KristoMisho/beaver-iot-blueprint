@@ -1,5 +1,5 @@
 /**
- * Payload Decoder for NB-IoT Device
+ * Payload Decoder for NB-IoT / Cellular Device
  *
  * Copyright 2024 Milesight IoT
  *
@@ -26,13 +26,20 @@ function decodePayload(bytes) {
     payload.iccid = buffer.readAscii(20);
     payload.csq = buffer.readUInt8();
     payload.data_length = buffer.readUInt16BE();
-    payload.data = decodeSensorData(buffer.slice(payload.data_length));
-    if (Array.isArray(sensorData) && sensorData.length > 0 ){
+   
+    // Decodifica i dati dei sensori
+    var sensorData = decodeSensorData(buffer.slice(payload.data_length));
+
+    // Unisce i dati dei sensori al livello radice del payload
+    if (Array.isArray(sensorData) && sensorData.length > 0) {
         Object.assign(payload, sensorData[0]);
-    } else if ( typeof sensorData === 'object' && sensorData !== null ){
-        Object.assign(payload,sensorData);
+    } else if (typeof sensorData === 'object' && sensorData !== null) {
+        Object.assign(payload, sensorData);
     }
+
+    // Rimuove l'oggetto nidificato 'data' così Beaver-IoT trova le chiavi al primo livello
     delete payload.data;
+
     return payload;
 }
 

@@ -5,7 +5,6 @@ codecs:
         - script: uc501/codec/uc501-cellular.js
           entry: Decode
           args:
-            - id: fPort
             - id: bytes
               is_payload: true
         - script: common/codec/flatten.js

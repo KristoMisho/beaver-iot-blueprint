@@ -1,707 +1,275 @@
-metadata:
-  lora_device_profile_class: ClassA-OTAA
-definition:
-  input:
-    type: object
-    properties:
-      - key: device_id
-        type: string
-        required: true
-        is_device_id: true
-      - key: ipso_version
-        type: string
-        entity_mapping: ipso_version
-      - key: hardware_version
-        type: string
-        entity_mapping: hardware_version
-      - key: firmware_version
-        type: string
-        entity_mapping: firmware_version
-      - key: tsl_version
-        type: string
-        entity_mapping: tsl_version
-      - key: sn
-        type: string
-        entity_mapping: sn
-      - key: lorawan_class
-        type: long
-        entity_mapping: lorawan_class
-      - key: reset_event
-        type: boolean
-        entity_mapping: reset_event
-      - key: device_status
-        type: boolean
-        entity_mapping: device_status
-      - key: battery
-        type: long
-        entity_mapping: battery
-      - key: gpio_input_1
-        type: boolean
-        entity_mapping: gpio_input_1
-      - key: gpio_input_2
-        type: boolean
-        entity_mapping: gpio_input_2
-      - key: gpio_counter_1
-        type: long
-        entity_mapping: gpio_counter_1
-      - key: gpio_counter_2
-        type: long
-        entity_mapping: gpio_counter_2
-      - key: gpio_output_1
-        type: boolean
-        entity_mapping: gpio_output_1
-      - key: gpio_output_2
-        type: boolean
-        entity_mapping: gpio_output_2
-      - key: analog_input_1_type
-        type: long
-        entity_mapping: analog_input_1_type
-      - key: analog_input_1
-        type: double
-        entity_mapping: analog_input_1
-      - key: analog_input_1_max
-        type: double
-        entity_mapping: analog_input_1_max
-      - key: analog_input_1_min
-        type: double
-        entity_mapping: analog_input_1_min
-      - key: analog_input_1_avg
-        type: double
-        entity_mapping: analog_input_1_avg
-      - key: analog_input_1_alarm
-        type: long
-        entity_mapping: analog_input_1_alarm
-      - key: analog_input_2_type
-        type: long
-        entity_mapping: analog_input_2_type
-      - key: analog_input_2
-        type: double
-        entity_mapping: analog_input_2
-      - key: analog_input_2_max
-        type: double
-        entity_mapping: analog_input_2_max
-      - key: analog_input_2_min
-        type: double
-        entity_mapping: analog_input_2_min
-      - key: analog_input_2_avg
-        type: double
-        entity_mapping: analog_input_2_avg
-      - key: analog_input_2_alarm
-        type: long
-        entity_mapping: analog_input_2_alarm
-      - key: sid12
-        type: string
-        entity_mapping: sid12
-      - key: modbus_chn_1
-        type: double
-        entity_mapping: modbus_chn_1
-      - key: modbus_chn_2
-        type: double
-        entity_mapping: modbus_chn_2
-      - key: modbus_chn_3
-        type: double
-        entity_mapping: modbus_chn_3
-      - key: modbus_chn_4
-        type: double
-        entity_mapping: modbus_chn_4
-      - key: modbus_chn_5
-        type: double
-        entity_mapping: modbus_chn_5
-      - key: modbus_chn_6
-        type: double
-        entity_mapping: modbus_chn_6
-      - key: modbus_chn_7
-        type: double
-        entity_mapping: modbus_chn_7
-      - key: modbus_chn_8
-        type: double
-        entity_mapping: modbus_chn_8
-      - key: modbus_chn_9
-        type: double
-        entity_mapping: modbus_chn_9
-      - key: modbus_chn_10
-        type: double
-        entity_mapping: modbus_chn_10
-      - key: modbus_chn_11
-        type: double
-        entity_mapping: modbus_chn_11
-      - key: modbus_chn_12
-        type: double
-        entity_mapping: modbus_chn_12
-      - key: modbus_chn_13
-        type: double
-        entity_mapping: modbus_chn_13
-      - key: modbus_chn_14
-        type: double
-        entity_mapping: modbus_chn_14
-      - key: modbus_chn_15
-        type: double
-        entity_mapping: modbus_chn_15
-      - key: modbus_chn_16
-        type: double
-        entity_mapping: modbus_chn_16
-      - key: collection_interval
-        type: long
-        entity_mapping: collection_interval
-      - key: report_interval
-        type: long
-        entity_mapping: report_interval
-      - key: time_zone
-        type: long
-        entity_mapping: time_zone
-      - key: history_enable
-        type: boolean
-        entity_mapping: history_enable
-      - key: retransmit_enable
-        type: boolean
-        entity_mapping: retransmit_enable
-      - key: retransmit_interval
-        type: long
-        entity_mapping: retransmit_interval
-      - key: resend_interval
-        type: long
-        entity_mapping: resend_interval
-  output:
-    type: object
-    properties:
-      - key: gpio_output_1
-        type: boolean
-        entity_mapping: gpio_output_1
-      - key: gpio_output_2
-        type: boolean
-        entity_mapping: gpio_output_2
-      - key: modbus_chn_1
-        type: double
-        entity_mapping: modbus_chn_1
-      - key: modbus_chn_2
-        type: double
-        entity_mapping: modbus_chn_2
-      - key: modbus_chn_3
-        type: double
-        entity_mapping: modbus_chn_3
-      - key: modbus_chn_4
-        type: double
-        entity_mapping: modbus_chn_4
-      - key: modbus_chn_5
-        type: double
-        entity_mapping: modbus_chn_5
-      - key: modbus_chn_6
-        type: double
-        entity_mapping: modbus_chn_6
-      - key: modbus_chn_7
-        type: double
-        entity_mapping: modbus_chn_7
-      - key: modbus_chn_8
-        type: double
-        entity_mapping: modbus_chn_8
-      - key: modbus_chn_9
-        type: double
-        entity_mapping: modbus_chn_9
-      - key: modbus_chn_10
-        type: double
-        entity_mapping: modbus_chn_10
-      - key: modbus_chn_11
-        type: double
-        entity_mapping: modbus_chn_11
-      - key: modbus_chn_12
-        type: double
-        entity_mapping: modbus_chn_12
-      - key: modbus_chn_13
-        type: double
-        entity_mapping: modbus_chn_13
-      - key: modbus_chn_14
-        type: double
-        entity_mapping: modbus_chn_14
-      - key: modbus_chn_15
-        type: double
-        entity_mapping: modbus_chn_15
-      - key: modbus_chn_16
-        type: double
-        entity_mapping: modbus_chn_16
-      - key: reboot
-        type: boolean
-        entity_mapping: reboot
-      - key: collection_interval
-        type: long
-        entity_mapping: collection_interval
-      - key: report_interval
-        type: long
-        entity_mapping: report_interval
-      - key: sync_time
-        type: boolean
-        entity_mapping: sync_time
-      - key: timestamp
-        type: long
-        entity_mapping: timestamp
-      - key: time_zone
-        type: long
-        entity_mapping: time_zone
-      - key: report_status
-        type: boolean
-        entity_mapping: report_status
-      - key: history_enable
-        type: boolean
-        entity_mapping: history_enable
-      - key: retransmit_enable
-        type: boolean
-        entity_mapping: retransmit_enable
-      - key: retransmit_interval
-        type: long
-        entity_mapping: retransmit_interval
-      - key: resend_interval
-        type: long
-        entity_mapping: resend_interval
-      - key: fetch_history.start_time
-        type: long
-        entity_mapping: fetch_history.start_time
-      - key: fetch_history.end_time
-        type: long
-        entity_mapping: fetch_history.end_time
-      - key: clear_history
-        type: boolean
-        entity_mapping: clear_history
-      - key: stop_transmit
-        type: boolean
-        entity_mapping: stop_transmit
-initial_entities:
-  - name: IPSO Version
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 6
-    identifier: ipso_version
-  - name: Hardware Version
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 6
-    identifier: hardware_version
-  - name: Firmware Version
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 6
-    identifier: firmware_version
-  - name: TSL Version
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 6
-    identifier: tsl_version
-  - name: SN
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 16
-    identifier: sn
-  - name: LoRaWAN Class Type
-    type: property
-    access_mod: R
-    value_type: long
-    attributes:
-      enum:
-        '0': Class A
-        '1': Class B
-        '2': Class C
-        '3': Class CtoB
-    identifier: lorawan_class
-  - name: Reset Event
-    type: property
-    access_mod: R
-    value_type: boolean
-    attributes:
-      enum:
-        'false': normal
-        'true': reset
-    identifier: reset_event
-  - name: Device Status
-    type: property
-    access_mod: R
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'off'
-        'true': 'on'
-    identifier: device_status
-  - name: Battery
-    type: property
-    access_mod: R
-    value_type: long
-    attributes:
-      unit: '%'
-    identifier: battery
-  - name: GPIO Input (Channel 1)
-    type: property
-    access_mod: R
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'off'
-        'true': 'on'
-    identifier: gpio_input_1
-  - name: GPIO Input (Channel 2)
-    type: property
-    access_mod: R
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'off'
-        'true': 'on'
-    identifier: gpio_input_2
-  - name: GPIO Counter (Channel 1)
-    type: property
-    access_mod: R
-    value_type: long
-    identifier: gpio_counter_1
-  - name: GPIO Counter (Channel 2)
-    type: property
-    access_mod: R
-    value_type: long
-    identifier: gpio_counter_2
-  - name: GPIO Output (Channel 1)
-    type: property
-    access_mod: RW
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'off'
-        'true': 'on'
-    identifier: gpio_output_1
-  - name: GPIO Output (Channel 2)
-    type: property
-    access_mod: RW
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'off'
-        'true': 'on'
-    identifier: gpio_output_2
-  - name: Analog Input Type (Channel 1)
-    type: property
-    access_mod: R
-    value_type: long
-    attributes:
-      enum:
-        '0': current
-        '1': voltage
-    identifier: analog_input_1_type
-  - name: Analog Input (Channel 1)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_1
-  - name: Analog Input Max (Channel 1)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_1_max
-  - name: Analog Input Min (Channel 1)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_1_min
-  - name: Analog Input Avg (Channel 1)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_1_avg
-  - name: Analog Input Alarm (Channel 1)
-    type: property
-    access_mod: R
-    value_type: long
-    attributes:
-      enum:
-        '1': threshold alarm
-        '2': value change alarm
-    identifier: analog_input_1_alarm
-  - name: Analog Input Type (Channel 2)
-    type: property
-    access_mod: R
-    value_type: long
-    attributes:
-      enum:
-        '0': current
-        '1': voltage
-    identifier: analog_input_2_type
-  - name: Analog Input (Channel 2)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_2
-  - name: Analog Input Max (Channel 2)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_2_max
-  - name: Analog Input Min (Channel 2)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_2_min
-  - name: Analog Input Avg (Channel 2)
-    type: property
-    access_mod: R
-    value_type: double
-    identifier: analog_input_2_avg
-  - name: Analog Input Alarm (Channel 2)
-    type: property
-    access_mod: R
-    value_type: long
-    attributes:
-      enum:
-        '1': threshold alarm
-        '2': value change alarm
-    identifier: analog_input_2_alarm
-  - name: SID-12
-    type: property
-    access_mod: R
-    value_type: string
-    attributes:
-      max_length: 255
-    identifier: sid12
-  - name: Modbus Channel 1
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_1
-  - name: Modbus Channel 2
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_2
-  - name: Modbus Channel 3
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_3
-  - name: Modbus Channel 4
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_4
-  - name: Modbus Channel 5
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_5
-  - name: Modbus Channel 6
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_6
-  - name: Modbus Channel 7
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_7
-  - name: Modbus Channel 8
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_8
-  - name: Modbus Channel 9
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_9
-  - name: Modbus Channel 10
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_10
-  - name: Modbus Channel 11
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_11
-  - name: Modbus Channel 12
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_12
-  - name: Modbus Channel 13
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_13
-  - name: Modbus Channel 14
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_14
-  - name: Modbus Channel 15
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_15
-  - name: Modbus Channel 16
-    type: property
-    access_mod: RW
-    value_type: double
-    identifier: modbus_chn_16
-  - name: Reboot
-    type: service
-    access_mod: W
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'no'
-        'true': 'yes'
-    identifier: reboot
-  - name: Collection Interval
-    type: property
-    access_mod: RW
-    value_type: long
-    attributes:
-      unit: s
-    identifier: collection_interval
-  - name: Report Interval
-    type: property
-    access_mod: RW
-    value_type: long
-    attributes:
-      unit: s
-    identifier: report_interval
-  - name: Sync Time
-    type: service
-    access_mod: W
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'no'
-        'true': 'yes'
-    identifier: sync_time
-  - name: History (Timestamp)
-    type: service
-    access_mod: W
-    value_type: long
-    attributes:
-      unit: s
-    identifier: timestamp
-  - name: Time Zone
-    type: property
-    access_mod: RW
-    value_type: long
-    attributes:
-      enum:
-        '0': UTC
-        '10': UTC+1
-        '20': UTC+2
-        '30': UTC+3
-        '35': UTC+3:30
-        '40': UTC+4
-        '45': UTC+4:30
-        '50': UTC+5
-        '55': UTC+5:30
-        '57': UTC+5:45
-        '60': UTC+6
-        '65': UTC+6:30
-        '70': UTC+7
-        '80': UTC+8
-        '90': UTC+9
-        '95': UTC+9:30
-        '100': UTC+10
-        '105': UTC+10:30
-        '110': UTC+11
-        '120': UTC+12
-        '127': UTC+12:45
-        '130': UTC+13
-        '140': UTC+14
-        '-120': UTC-12
-        '-110': UTC-11
-        '-100': UTC-10
-        '-95': UTC-9:30
-        '-90': UTC-9
-        '-80': UTC-8
-        '-70': UTC-7
-        '-60': UTC-6
-        '-50': UTC-5
-        '-40': UTC-4
-        '-35': UTC-3:30
-        '-30': UTC-3
-        '-20': UTC-2
-        '-10': UTC-1
-    identifier: time_zone
-  - name: Report Status
-    type: service
-    access_mod: W
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'no'
-        'true': 'yes'
-    identifier: report_status
-  - name: History Enable
-    type: property
-    access_mod: RW
-    value_type: boolean
-    attributes:
-      enum:
-        'false': disable
-        'true': enable
-    identifier: history_enable
-  - name: Retransmit Enable
-    type: property
-    access_mod: RW
-    value_type: boolean
-    attributes:
-      enum:
-        'false': disable
-        'true': enable
-    identifier: retransmit_enable
-  - name: Retransmit Interval
-    type: property
-    access_mod: RW
-    value_type: long
-    attributes:
-      unit: s
-    identifier: retransmit_interval
-  - name: Resend Interval
-    type: property
-    access_mod: RW
-    value_type: long
-    attributes:
-      unit: s
-    identifier: resend_interval
-  - identifier: fetch_history
-    name: Fetch History (Start Time)
-    type: service
-    access_mod: W
-    value_type: object
-    children:
-      - name: Fetch History (Start Time)
-        value_type: long
-        attributes:
-          unit: s
-        identifier: start_time
-      - name: Fetch History (End Time)
-        value_type: long
-        attributes:
-          unit: s
-        identifier: end_time
-  - name: Clear History
-    type: service
-    access_mod: W
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'no'
-        'true': 'yes'
-    identifier: clear_history
-  - name: Stop Transmit
-    type: service
-    access_mod: W
-    value_type: boolean
-    attributes:
-      enum:
-        'false': 'no'
-        'true': 'yes'
-    identifier: stop_transmit
+name: "Milesight UC50x Cellular"
+model: "UC50x"
+manufacturer: "Milesight"
+description: "Template MQTT con decodifica nativa per Milesight UC50x Cellular"
+type: "sensor"
+
+# 1. Definizione delle proprietà estrapolate dalla funzione decodePayload
+properties:
+  - identifier: "battery"
+    name: "Batteria"
+    value_type: "integer"
+    unit: "%"
+    access_mode: "ro"
+
+  - identifier: "adc_1"
+    name: "Ingresso Analogico 1 (Corrente/Pressione)"
+    value_type: "float"
+    unit: "mA"
+    access_mode: "ro"
+
+  - identifier: "adc_1_min"
+    name: "Ingresso Analogico 1 Min"
+    value_type: "float"
+    access_mode: "ro"
+
+  - identifier: "adc_1_max"
+    name: "Ingresso Analogico 1 Max"
+    value_type: "float"
+    access_mode: "ro"
+
+  - identifier: "adc_1_avg"
+    name: "Ingresso Analogico 1 Media"
+    value_type: "float"
+    access_mode: "ro"
+
+  - identifier: "adv_1"
+    name: "Ingresso Analogico 1 (Tensione)"
+    value_type: "float"
+    unit: "V"
+    access_mode: "ro"
+
+  - identifier: "gpio_input_1"
+    name: "Ingresso Digitale GPIO 1"
+    value_type: "string"
+    access_mode: "ro"
+
+  - identifier: "gpio_output_1"
+    name: "Uscita Digitale GPIO 1"
+    value_type: "string"
+    access_mode: "ro"
+
+  - identifier: "timestamp"
+    name: "Timestamp"
+    value_type: "integer"
+    access_mode: "ro"
+
+# 2. Chiamata ed esecuzione della funzione di decodifica `decodePayload`
 codec:
-  id: default
-  ref: uc501/codec/device-codec.yaml
+  type: "javascript"
+  # Beaver IoT invoca la funzione principale del codec passandole il payload grezzo
+  entry_point: "decodePayload"
+  script: |
+    /**
+     * Payload Decoder for NB-IoT Device
+     * Copyright 2024 Milesight IoT
+     * @product UC50x
+     */
+
+    function decodePayload(bytes) {
+        var buffer = new Buffer(bytes);
+
+        var payload = {};
+        payload.startFlag = buffer.readUInt8();
+        payload.id = buffer.readUInt16BE();
+        payload.length = buffer.readUInt16BE();
+        payload.flag = buffer.readUInt8();
+        payload.frameCnt = buffer.readUInt16BE();
+        payload.protocolVersion = buffer.readUInt8();
+        payload.firmwareVersion = buffer.readAscii(4);
+        payload.hardwareVersion = buffer.readAscii(4);
+        payload.sn = buffer.readAscii(16);
+        payload.imei = buffer.readAscii(15);
+        payload.imsi = buffer.readAscii(15);
+        payload.iccid = buffer.readAscii(20);
+        payload.csq = buffer.readUInt8();
+        payload.data_length = buffer.readUInt16BE();
+        payload.data = decodeSensorData(buffer.slice(payload.data_length));
+
+        return payload;
+    }
+
+    var gpio_chns = [0x03, 0x04];
+    var ai_chns = [0x05, 0x06];
+    var ai_alarm_chns = [0x85, 0x86];
+    var ai_mutation_alarm_chns = [0x95, 0x96];
+    var ai_error_chns = [0xb5, 0xb6];
+
+    function decodeSensorData(bytes) {
+        var history = [];
+
+        var decoded = {};
+        var repack_flag = false;
+        var buffer = new Buffer(bytes);
+        while (buffer.remaining() > 0) {
+            var channel_id = buffer.readUInt8();
+            var channel_type = buffer.readUInt8();
+
+            if (repack_flag === true && ((channel_id === 0x07 && channel_type === 0xef) || (channel_id === 0x20 && channel_type === 0xef))) {
+                history.push(decoded);
+
+                repack_flag = false;
+                decoded = {};
+            }
+
+            // BATTERY
+            if (channel_id === 0x01 && channel_type === 0x75) {
+                decoded.battery = buffer.readUInt8();
+            }
+            // GPIO DIGITAL INPUT
+            else if (includes(gpio_chns, channel_id) && channel_type === 0x00) {
+                var gpio_channel_name = "gpio_input_" + (channel_id - gpio_chns[0] + 1);
+                decoded[gpio_channel_name] = buffer.readUInt8() === 0 ? "low" : "high";
+            }
+            // GPIO DIGITAL OUTPUT
+            else if (includes(gpio_chns, channel_id) && channel_type === 0x01) {
+                var gpio_channel_name = "gpio_output_" + (channel_id - gpio_chns[0] + 1);
+                decoded[gpio_channel_name] = buffer.readUInt8() === 0 ? "low" : "high";
+            }
+            // GPIO COUNTER
+            else if (includes(gpio_chns, channel_id) && channel_type === 0xc8) {
+                var gpio_channel_name = "gpio_counter_" + (channel_id - gpio_chns[0] + 1);
+                decoded[gpio_channel_name] = buffer.readUInt32LE();
+            }
+            // ANALOG INPUT
+            else if (includes(ai_chns, channel_id) && channel_type === 0xf1) {
+                var mode = buffer.readUInt8();
+                var ai_mode = (mode & 0x01) === 1 ? "voltage" : "current";
+                var ai_value_mode = ((mode >> 1) & 0x01) === 1 ? "multiple" : "single";
+                var ai_data_type = ((mode >> 2) & 0x01) === 1 ? "float16" : "float32";
+
+                var ai_chn_name;
+                if (ai_mode === "voltage") {
+                    ai_chn_name = "adv_" + (channel_id - ai_chns[0] + 1);
+                } else {
+                    ai_chn_name = "adc_" + (channel_id - ai_chns[0] + 1);
+                }
+
+                if (ai_data_type === "float16") {
+                    decoded[ai_chn_name] = buffer.readFloat16LE();
+                    if (ai_value_mode === "multiple") {
+                        decoded[ai_chn_name + "_min"] = buffer.readFloat16LE();
+                        decoded[ai_chn_name + "_max"] = buffer.readFloat16LE();
+                        decoded[ai_chn_name + "_avg"] = buffer.readFloat16LE();
+                    }
+                } else {
+                    decoded[ai_chn_name] = buffer.readFloatLE();
+                    if (ai_value_mode === "multiple") {
+                        decoded[ai_chn_name + "_min"] = buffer.readFloatLE();
+                        decoded[ai_chn_name + "_max"] = buffer.readFloatLE();
+                        decoded[ai_chn_name + "_avg"] = buffer.readFloatLE();
+                    }
+                }
+            }
+            // TIMESTAMP
+            else if ((channel_id === 0x07 && channel_type === 0xef) || (channel_id === 0x20 && channel_type === 0xef)) {
+                decoded.timestamp = buffer.readUInt32LE();
+                repack_flag = true;
+            } else {
+                break;
+            }
+        }
+
+        if (Object.keys(decoded).length !== 0) {
+            history.push(decoded);
+        }
+        return history;
+    }
+
+    function Buffer(bytes) {
+        this.bytes = bytes;
+        this.length = bytes.length;
+        this.offset = 0;
+    }
+
+    Buffer.prototype.readUInt8 = function () {
+        var value = this.bytes[this.offset];
+        this.offset += 1;
+        return value & 0xff;
+    };
+
+    Buffer.prototype.readInt8 = function () {
+        var value = this.readUInt8();
+        return value > 0x7f ? value - 0x100 : value;
+    };
+
+    Buffer.prototype.readUInt16LE = function () {
+        var value = (this.bytes[this.offset + 1] << 8) + this.bytes[this.offset];
+        this.offset += 2;
+        return value & 0xffff;
+    };
+
+    Buffer.prototype.readInt16LE = function () {
+        var value = this.readUInt16LE();
+        return value > 0x7fff ? value - 0x10000 : value;
+    };
+
+    Buffer.prototype.readUInt16BE = function () {
+        var value = (this.bytes[this.offset] << 8) + this.bytes[this.offset + 1];
+        this.offset += 2;
+        return value & 0xffff;
+    };
+
+    Buffer.prototype.readInt16BE = function () {
+        var value = this.readUIntBE();
+        return value > 0x7fff ? value - 0x10000 : value;
+    };
+
+    Buffer.prototype.readUInt32LE = function () {
+        var value = (this.bytes[this.offset + 3] << 24) + (this.bytes[this.offset + 2] << 16) + (this.bytes[this.offset + 1] << 8) + this.bytes[this.offset];
+        this.offset += 4;
+        return (value & 0xffffffff) >>> 0;
+    };
+
+    Buffer.prototype.readInt32LE = function () {
+        var value = this.readUInt32LE();
+        return value > 0x7fffffff ? value - 0x100000000 : value;
+    };
+
+    Buffer.prototype.readFloat16LE = function () {
+        var bits = this.readUInt16LE();
+        var sign = bits >>> 15 === 0 ? 1.0 : -1.0;
+        var e = (bits >>> 10) & 0x1f;
+        var m = e === 0 ? (bits & 0x3ff) << 1 : (bits & 0x3ff) | 0x400;
+        var f = sign * m * Math.pow(2, e - 25);
+        return Number(f.toFixed(2));
+    };
+
+    Buffer.prototype.readFloatLE = function () {
+        var value = this.readUInt32LE();
+        var sign = value >>> 31 === 0 ? 1.0 : -1.0;
+        var e = (value >>> 23) & 0xff;
+        var m = e === 0 ? (value & 0x7fffff) << 1 : (value & 0x7fffff) | 0x800000;
+        var f = sign * m * Math.pow(2, e - 150);
+        return Number(f.toFixed(2));
+    };
+
+    Buffer.prototype.readAscii = function (length) {
+        var end = length;
+        for (var i = 0; i < length; i++) {
+            if (this.bytes[this.offset + i] === 0) {
+                end = i;
+                break;
+            }
+        }
+        var str = String.fromCharCode.apply(null, this.bytes.slice(this.offset, this.offset + end));
+        this.offset += length;
+        return str;
+    };
+
+    Buffer.prototype.slice = function (length) {
+        return this.bytes.slice(this.offset, this.offset + length);
+    };
+
+    Buffer.prototype.remaining = function () {
+        return this.bytes.length - this.offset;
+    };
+
+    function includes(items, item) {
+        var size = items.length;
+        for (var i = 0; i < size; i++) {
+            if (items[i] == item) {
+                return true;
+            }
+        }
+        return false;
